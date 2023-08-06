@@ -24,8 +24,7 @@ TfLiteStatus Prepare(TfLiteContext* context, TfLiteNode* node) {
   TF_LITE_ENSURE_OK(context, GetInputSafe(context, node, kInputATensor, &input_a));
   TF_LITE_ENSURE_OK(context, GetInputSafe(context, node, kInputBTensor, &input_b));
   TfLiteTensor* output;
-  TF_LITE_ENSURE_OK(context,
-                    GetOutputSafe(context, node, kOutputTensor, &output));
+  TF_LITE_ENSURE_OK(context, GetOutputSafe(context, node, kOutputTensor, &output));
 
   TF_LITE_ENSURE_EQ(context, input_a->dims->size, 2);
   TF_LITE_ENSURE_EQ(context, input_b->dims->size, 2);
